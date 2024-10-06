@@ -267,7 +267,7 @@ About 2
    width: 57% */
 .section__title p {
     color: #606060;
-    margin: 21px auto auto;
+    margin: 21px;
 }
 .service__thumb a img {
     width: 100%;
