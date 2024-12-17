@@ -38,7 +38,7 @@
 }
 
 .slide__align--center {
-  align-items: center;
+  align-items: left;
   display: flex;
 }
 .slider__inner{
