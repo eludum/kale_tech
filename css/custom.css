@@ -215,3 +215,7 @@ a, a:hover {
 		}
   }
 }
+
+.justify-text {
+  text-align: justify;
+}
