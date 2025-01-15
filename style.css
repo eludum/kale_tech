@@ -2050,6 +2050,7 @@ blockquote {
 .htc__address__container {
     display: flex;
     margin-top: 50px;
+    justify-content: center;
 }
 
 .ct__address {
