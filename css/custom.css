@@ -579,3 +579,1332 @@ img, iframe, video {
   border-color: #fff;
   color: #1f2d30;
 }
+
+/* Homepage hero: one sentence as the headline */
+.slider__container .slider__inner h1 {
+  max-width: none;
+  margin: 0 auto;
+  font-size: 84px;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+.slider__container .slider__inner h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  margin: 28px auto 0;
+  border-radius: 3px;
+  background: #fcc236;
+  box-shadow: none;
+}
+
+@media (max-width: 1199px) {
+  .slider__container .slider__inner h1 {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 991px) {
+  .slider__container .slider__inner h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider__container .slider__inner h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+  }
+  .slider__container .slider__inner h1::after {
+    width: 60px;
+    height: 4px;
+    margin-top: 20px;
+  }
+}
+
+/* Tablet: keep the trimmed logo inside the 80px header bar */
+@media (min-width: 768px) and (max-width: 991px) {
+  .logo img {
+    width: auto;
+    max-width: 100%;
+    max-height: 64px;
+  }
+}
+
+/* ----------------------------------------------------
+	Homepage: the two services as tiles under the header
+-------------------------------------------------------*/
+.home__tiles {
+  background: #fafafa;
+}
+
+.home__tiles .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home__tiles .row > [class*="col-"] {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.home__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 40px 32px 32px;
+  text-align: center;
+  background: #fff;
+  border-top: 4px solid #fcc236;
+  border-radius: 8px;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.31);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home__tile:hover,
+.home__tile:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px -12px rgba(0, 0, 0, 0.4);
+}
+
+.home__tile__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #fcc236;
+}
+
+.home__tile__icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.home__tile h3 {
+  color: #1f2d30;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.home__tile p {
+  color: #606060;
+  max-width: 420px;
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+.home__tile__more {
+  color: #d9a21b;
+  font-weight: 600;
+}
+
+.home__tile:hover .home__tile__more {
+  color: #1f2d30;
+}
+
+@media (max-width: 767px) {
+  .home__tiles .row > [class*="col-"] {
+    margin-bottom: 16px;
+  }
+  .home__tile {
+    padding: 32px 20px 26px;
+  }
+  /* override the generic mobile image rule */
+  .home__tile__icon img {
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 !important;
+  }
+}
+
+/* ----------------------------------------------------
+	Homepage structure: consistent section headings + spacing
+-------------------------------------------------------*/
+.home__section {
+  padding: 80px 0;
+}
+
+.home__split + .home__split,
+.home__section.home__cta {
+  padding-top: 0;
+}
+
+.home__why {
+  background: #fafafa;
+}
+
+.home__heading {
+  max-width: 680px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.home__eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #d9a21b;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home__heading h2 {
+  margin: 0;
+  color: #1f2d30;
+  font-family: Raleway, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.home__heading h2::after,
+.home__split .section__title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 18px;
+  border-radius: 2px;
+  background: #fcc236;
+}
+
+.home__heading h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__heading p {
+  margin: 18px 0 0;
+  color: #606060;
+  font-size: 16px;
+}
+
+.home__split .section__title {
+  margin-bottom: 22px;
+}
+
+.home__split .row > .col-xs-12 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.home__photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 991px) {
+  .home__split .row > .col-xs-12 {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__section {
+    padding: 50px 0;
+  }
+  .home__heading {
+    margin-bottom: 32px;
+  }
+  .home__heading h2 {
+    font-size: 28px;
+  }
+}
+
+/* "Waarom ons kiezen?": three equal cards instead of the theme's hover-flip boxes */
+.home__why .row.text-center {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home__why .row.text-center > [class*="col-"] {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.home__why .about {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.home__why .about__inner.about__hober__info {
+  display: none;
+}
+
+.home__why .about__inner {
+  position: relative;
+  height: 100%;
+  padding: 40px 28px 72px;
+  background: #fff;
+  border-top: 4px solid #fcc236;
+  border-radius: 8px;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.31);
+}
+
+.home__why .about__inner h2 {
+  color: #1f2d30;
+}
+
+.home__why .about__inner p {
+  color: #606060;
+}
+
+.home__why .about__inner br {
+  display: none;
+}
+
+.home__why .about__icon {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  right: auto;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.home__section.home__cta {
+  padding-top: 60px;
+}
+
+/* ----------------------------------------------------
+	Homepage: Kale-Tech's own look
+-------------------------------------------------------*/
+
+/* section labels: small yellow capitals */
+.home__eyebrow {
+  color: #d9a21b;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* side titles in the theme's heading style + yellow bar under it */
+.home__title {
+  margin: 4px 0 0;
+  color: #1f2d30;
+  font-family: Raleway, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* intro photo: yellow outline frame offset to the top-right */
+.home__photo-wrap {
+  position: relative;
+  padding: 22px 22px 0 0;
+}
+.home__photo-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 80%;
+  border: 4px solid #fcc236;
+  border-radius: 8px;
+}
+.home__photo-wrap .home__photo {
+  position: relative;
+}
+
+/* check list with square yellow markers */
+.home__checks {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+.home__checks li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  background: #fafafa;
+  border-left: 3px solid #fcc236;
+  color: #1f2d30;
+  font-weight: 600;
+}
+.home__checks li i {
+  color: #d9a21b;
+}
+
+/* services: dark cards */
+.home__tiles {
+  background: #fafafa;
+}
+.home__tile {
+  background: #1f2d30;
+  border-top: 0;
+  border-bottom: 4px solid #fcc236;
+  border-radius: 8px;
+}
+.home__tile h3 {
+  color: #fff;
+}
+.home__tile p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* square yellow buttons with arrow */
+.home__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+  padding: 14px 30px;
+  border-radius: 4px;
+  background: #fcc236;
+  color: #1f2d30;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.home__pill:hover,
+.home__pill:focus {
+  background: #1f2d30;
+  color: #fcc236;
+}
+
+/* figures: dark band with yellow numbers */
+.home__stats {
+  padding: 0;
+  background: #1f2d30;
+}
+.home__stats__grid {
+  display: flex;
+  padding: 56px 0;
+}
+.home__stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.home__stat + .home__stat {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+.home__stat__nr {
+  color: #fcc236;
+  font-family: Raleway, sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+}
+.home__stat__label {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.home__stats + .home__split {
+  padding-top: 80px;
+}
+
+@media (max-width: 991px) {
+  .home__photo-wrap {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__title {
+    font-size: 28px;
+  }
+  .home__photo-wrap {
+    padding: 14px 14px 0 0;
+  }
+  .home__photo-wrap .home__photo {
+    margin: 0 !important;
+  }
+  .home__stats__grid {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .home__stat {
+    padding: 22px 0;
+  }
+  .home__stat + .home__stat {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .home__stat__nr {
+    font-size: 46px;
+  }
+  .home__stats + .home__split {
+    padding-top: 50px;
+  }
+}
+
+/* "Waarom ons kiezen?": icon in a yellow circle above the title */
+.home__why .about__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 28px 32px;
+}
+.home__why .about__icon {
+  order: -1;
+  position: static;
+  transform: none;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 0 18px;
+  border-radius: 50%;
+  background: #fcc236;
+}
+.home__why .about__icon img {
+  max-height: 32px;
+  width: auto !important;
+  margin: 0 !important;
+  filter: brightness(0);
+  opacity: 0.85;
+}
+.home__why .about__inner h2 {
+  font-size: 20px;
+}
+
+/* Services: light and open instead of dark boxed cards */
+.home__tiles {
+  background: #fff;
+}
+.home__tile {
+  background: #fdf6e3;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: none;
+}
+.home__tile:hover,
+.home__tile:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -18px rgba(0, 0, 0, 0.35);
+}
+.home__tile h3 {
+  color: #1f2d30;
+}
+.home__tile p {
+  color: #606060;
+}
+
+/* Intro block: two-line title, lead sentence, left-aligned text */
+.home__title--intro {
+  font-size: 46px;
+  line-height: 1.15;
+}
+.home__split .htc__mission__wrap.justify-text,
+.home__split .htc__mission__wrap.justify-text p {
+  text-align: left;
+}
+.home__lead {
+  color: #1f2d30;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.home__split .htc__mission__wrap p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.home__split .htc__mission__wrap p.home__lead {
+  font-size: 20px;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  .home__title--intro {
+    font-size: 32px;
+  }
+  .home__lead,
+  .home__split .htc__mission__wrap p.home__lead {
+    font-size: 18px;
+  }
+}
+
+/* Intro block: a blank line between the paragraphs */
+.home__split .htc__mission__wrap p,
+.home__split .htc__mission__wrap p.home__lead {
+  margin-bottom: 26px;
+}
+
+.home__heading h2 {
+  text-transform: none;
+}
+
+/* "Onze diensten": same size as the intro title */
+.home__tiles .home__heading h2 {
+  font-size: 46px;
+}
+@media (max-width: 767px) {
+  .home__tiles .home__heading h2 {
+    font-size: 34px;
+  }
+}
+
+/* Services on the homepage: no blocks, just icon + text with a thin divider */
+.home__tile {
+  background: transparent;
+  border-radius: 0;
+  padding: 10px 48px 20px;
+}
+.home__tile:hover,
+.home__tile:focus {
+  transform: none;
+  box-shadow: none;
+}
+.home__tiles .row > [class*="col-"] + [class*="col-"] .home__tile {
+  border-left: 1px solid #e5e5e5;
+}
+@media (max-width: 767px) {
+  .home__tile {
+    padding: 10px 0 28px;
+  }
+  .home__tiles .row > [class*="col-"] + [class*="col-"] .home__tile {
+    border-left: 0;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 36px;
+  }
+}
+
+/* Service texts next to the icons: titles like the section heading, readable body text */
+.home__tile h3 {
+  font-size: 26px;
+  text-transform: none;
+  margin-bottom: 14px;
+}
+.home__tile p {
+  max-width: 440px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.75;
+}
+@media (max-width: 767px) {
+  .home__tile h3 {
+    font-size: 24px;
+  }
+  .home__tile p {
+    font-size: 15px;
+  }
+}
+
+/* Figures band: Kale-Tech yellow with dark numbers */
+.home__stats {
+  background: #fcc236;
+}
+.home__stats__grid {
+  padding: 64px 0;
+}
+.home__stat__nr {
+  color: #1f2d30;
+}
+.home__stat__label {
+  color: #1f2d30;
+  font-weight: 600;
+}
+.home__stat + .home__stat {
+  border-left-color: rgba(31, 45, 48, 0.2);
+}
+@media (max-width: 767px) {
+  .home__stat + .home__stat {
+    border-top-color: rgba(31, 45, 48, 0.2);
+  }
+}
+
+/* machine section now follows the services directly */
+.home__tiles + .home__split {
+  padding-top: 0;
+}
+
+.home__tiles + .home__split {
+  padding-top: 30px;
+}
+
+/* "Waarom Kale-Tech?": same heading size as the other sections, no capitals */
+.home__why .home__heading h2 {
+  font-size: 46px;
+}
+.home__why .about__inner h2 {
+  font-size: 22px;
+  text-transform: none;
+}
+@media (max-width: 767px) {
+  .home__why .home__heading h2 {
+    font-size: 34px;
+  }
+}
+
+/* Homepage CTA overlaps the yellow figures band */
+.home__stats .home__stats__grid {
+  padding-bottom: 110px;
+}
+.home__section.home__cta {
+  padding-top: 0;
+}
+.home__cta .project__cta {
+  position: relative;
+  margin-top: -70px;
+  background: #1f2d30;
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.6);
+}
+.home__cta .project__cta__text h3 {
+  color: #fff;
+}
+.home__cta .project__cta__text p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.home__cta .project__cta__btn {
+  background: #fcc236;
+  color: #1f2d30;
+}
+.home__cta .project__cta__btn:hover,
+.home__cta .project__cta__btn:focus {
+  background: #fff;
+  color: #1f2d30;
+}
+@media (max-width: 767px) {
+  .home__stats .home__stats__grid {
+    padding-bottom: 80px;
+  }
+  .home__cta .project__cta {
+    margin-top: -50px;
+  }
+}
+
+/* ----------------------------------------------------
+	Onze diensten page
+-------------------------------------------------------*/
+.bradcaump__inner h2.bradcaump-title--normal {
+  text-transform: none;
+}
+.dienst--grey {
+  background: #fafafa;
+}
+.home__split.dienst + .home__split.dienst {
+  padding-top: 80px;
+}
+.dienst .home__title--intro {
+  margin-bottom: 22px;
+}
+.dienst .home__lead.dienst__lead {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.dienst .steps__body h4 {
+  text-transform: none;
+}
+.dienst__illustration {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.dienst__photo {
+  max-height: 560px;
+  object-fit: cover;
+}
+
+/* applications grid */
+.svc__group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 10px 0 20px;
+  color: #1f2d30;
+  font-size: 22px;
+  font-weight: 700;
+}
+.svc__group::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e5e5;
+}
+.svc__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.svc {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  background: #fafafa;
+  border-radius: 10px;
+}
+.svc__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fcc236;
+}
+.svc__icon img {
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+  object-fit: contain;
+}
+.svc h4 {
+  margin: 4px 0 6px;
+  color: #1f2d30;
+  font-size: 18px;
+  font-weight: 700;
+}
+.svc p {
+  margin: 0;
+  color: #606060;
+  line-height: 1.6;
+}
+.dienst__cta {
+  margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+  .svc__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dienst__illustration {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .bradcaump__inner h2.bradcaump-title--normal {
+    font-size: 40px;
+  }
+  .svc__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .home__split.dienst + .home__split.dienst {
+    padding-top: 50px;
+  }
+  .dienst__photo {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* ----------------------------------------------------
+	Onze projecten page: card grid
+-------------------------------------------------------*/
+.proj__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.proj {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px -14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.proj:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -16px rgba(0, 0, 0, 0.45);
+}
+.proj__img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.proj__img img {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.proj:hover .proj__img img {
+  transform: scale(1.05);
+}
+.proj__tag {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #fcc236;
+  color: #1f2d30;
+  font-size: 12px;
+  font-weight: 700;
+}
+.proj__body {
+  padding: 22px 24px 26px;
+}
+.proj__body h3 {
+  margin: 0 0 8px;
+  color: #1f2d30;
+  font-size: 22px;
+  font-weight: 700;
+}
+.proj__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: #d9a21b;
+  font-size: 14px;
+  font-weight: 600;
+}
+.proj__body p {
+  margin: 0;
+  color: #606060;
+  line-height: 1.7;
+}
+.proj--cta {
+  justify-content: center;
+  align-items: flex-start;
+  padding: 36px 30px;
+  background: #1f2d30;
+}
+.proj--cta h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+}
+.proj--cta p {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+.proj--cta .project__cta__btn {
+  background: #fcc236;
+  color: #1f2d30;
+}
+.proj--cta .project__cta__btn:hover {
+  background: #fff;
+}
+@media (max-width: 991px) {
+  .proj__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .proj__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* Diensten: applications first, then the two process blocks */
+.dienst__cta {
+  margin-top: 0;
+}
+.home__section.home__cta {
+  padding-top: 60px;
+}
+
+/* Diensten: tighter spacing between the sections */
+.dienst-page .home__section {
+  padding: 50px 0;
+}
+.dienst-page .svc__grid:last-of-type {
+  margin-bottom: 0;
+}
+.dienst-page .home__split.dienst + .home__split.dienst {
+  padding-top: 50px;
+}
+.dienst-page .home__section.home__cta {
+  padding-top: 40px;
+}
+@media (max-width: 767px) {
+  .dienst-page .home__section {
+    padding: 36px 0;
+  }
+}
+
+/* Navigation without capitals (desktop, mobile menu, footer) */
+.main__menu > li > a,
+.mean-container .mean-nav ul li a,
+.ft__menu li a {
+  text-transform: none;
+}
+.main__menu > li > a {
+  font-size: 15px;
+}
+
+/* ----------------------------------------------------
+	Veiligheid + Contact pages
+-------------------------------------------------------*/
+.cert__wrap {
+  max-width: 420px;
+  margin: 0 auto;
+}
+.home__split .htc__mission__wrap p {
+  text-align: left;
+}
+.pillars {
+  background: #fafafa;
+}
+.pillar__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pillar {
+  padding: 34px 28px 30px;
+  text-align: center;
+  background: #fff;
+  border-top: 4px solid #fcc236;
+  border-radius: 8px;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.31);
+}
+.pillar__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #fcc236;
+  color: #1f2d30;
+  font-size: 26px;
+}
+.pillar h3 {
+  margin: 0 0 10px;
+  color: #1f2d30;
+  font-size: 22px;
+  font-weight: 700;
+}
+.pillar p {
+  margin: 0;
+  color: #606060;
+  line-height: 1.7;
+}
+
+/* dark CTA box, same as the homepage */
+.dark__cta {
+  background: #1f2d30;
+}
+.dark__cta .project__cta__text h3 {
+  color: #fff;
+}
+.dark__cta .project__cta__text p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.dark__cta .project__cta__btn {
+  background: #fcc236;
+  color: #1f2d30;
+}
+.dark__cta .project__cta__btn:hover,
+.dark__cta .project__cta__btn:focus {
+  background: #fff;
+  color: #1f2d30;
+}
+
+/* contact */
+.contact__page .contact__cards {
+  margin: 0 0 40px;
+}
+.contact__card--static {
+  cursor: default;
+}
+.contact__card--static:hover {
+  transform: none;
+}
+.contact__card__value {
+  text-align: center;
+}
+.contact__page .project__cta {
+  margin-bottom: 0;
+}
+.contact__visit-section {
+  background: #fafafa;
+}
+.contact__visit-section .contact__map {
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .pillar__grid {
+    grid-template-columns: 1fr;
+  }
+  .cert__wrap {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .bradcaump__inner h2.bradcaump-title--normal {
+    font-size: 40px;
+  }
+}
+
+/* Veiligheid: room between title and lead */
+.home__split .home__title--intro + .htc__mission__wrap {
+  margin-top: 22px;
+}
+
+/* Contact: less space between the offerte box and "Kom gerust langs" */
+.contact__page .home__section:first-child {
+  padding-bottom: 40px;
+}
+.contact__page .contact__visit-section {
+  padding-top: 40px;
+}
+
+/* Homepage buttons without capitals */
+.home__pill {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+
+/* Homepage CTA sits further into the yellow figures band */
+.home__stats .home__stats__grid {
+  padding-bottom: 150px;
+}
+.home__cta .project__cta {
+  margin-top: -110px;
+}
+@media (max-width: 767px) {
+  .home__stats .home__stats__grid {
+    padding-bottom: 110px;
+  }
+  .home__cta .project__cta {
+    margin-top: -80px;
+  }
+}
+
+/* ----------------------------------------------------
+	One title scale for every page
+	section titles 46 / 34, card titles 24 / 22, small titles 18, CTA titles 26 / 22
+-------------------------------------------------------*/
+.home__heading h2,
+.home__title,
+.home__title--intro {
+  font-family: Raleway, sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.home__tile h3,
+.home__why .about__inner h2,
+.proj__body h3,
+.pillar h3 {
+  font-family: Raleway, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+.svc h4,
+.steps__body h4,
+.svc__group {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.svc__group {
+  font-size: 22px;
+}
+.project__cta__text h3,
+.proj--cta h3 {
+  font-family: Raleway, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .home__heading h2,
+  .home__title,
+  .home__title--intro,
+  .home__tiles .home__heading h2,
+  .home__why .home__heading h2 {
+    font-size: 34px;
+  }
+  .home__tile h3,
+  .home__why .about__inner h2,
+  .proj__body h3,
+  .pillar h3,
+  .project__cta__text h3,
+  .proj--cta h3 {
+    font-size: 22px;
+  }
+}
+
+/* Figures labels without capitals */
+.home__stat__label {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 17px;
+}
+
+/* Diensten: first section gets the same top spacing as the other pages */
+.dienst-page .home__section:first-of-type,
+.dienst-page .toepassingen {
+  padding-top: 80px;
+}
+@media (max-width: 767px) {
+  .dienst-page .toepassingen {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .dienst-page .home__section:first-of-type,
+  .dienst-page .toepassingen {
+    padding-top: 50px;
+  }
+}
+
+/* Veiligheid on mobile/tablet: text first, certificate below */
+@media (max-width: 991px) {
+  .vca .cert__wrap {
+    margin: 30px auto 0;
+  }
+  .vca .row > .col-xs-12 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/* ----------------------------------------------------
+	Footer: one dark block, three columns, no capitals
+-------------------------------------------------------*/
+.site__footer {
+  position: relative;
+  background: #1f2d30;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 70px 0 0;
+  border-top: 4px solid #fcc236;
+}
+.site__footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 50px;
+}
+.site__footer .footer__logo {
+  width: 240px;
+  max-width: 100%;
+  margin: 0 0 22px;
+}
+.site__footer__brand p {
+  max-width: 380px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+.site__footer__title {
+  margin: 6px 0 20px;
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: none;
+}
+.site__footer__title::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: #fcc236;
+}
+.site__footer__links,
+.site__footer__contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site__footer__links li {
+  margin-bottom: 12px;
+}
+.site__footer a {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+.site__footer a:hover,
+.site__footer a:focus {
+  color: #fcc236;
+}
+.site__footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.site__footer__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fcc236;
+  color: #1f2d30;
+  font-size: 15px;
+}
+.site__footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.site__footer__bottom a {
+  color: #fcc236;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .site__footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .site__footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 767px) {
+  .site__footer {
+    padding-top: 50px;
+  }
+  .site__footer__grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-bottom: 34px;
+  }
+  .site__footer .footer__logo {
+    width: 200px;
+  }
+  .site__footer__bottom {
+    flex-direction: column;
+  }
+}
