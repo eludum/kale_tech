@@ -219,3 +219,363 @@ a, a:hover {
 .justify-text {
   text-align: justify;
 }
+/* ----------------------------------------------------
+	Mobile fixes (phones + small tablets)
+-------------------------------------------------------*/
+html, body {
+  overflow-x: hidden;
+}
+
+img, iframe, video {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  /* responsive.css pins .container to 300px, which leaves ~240px of text on a phone */
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* justified text produces huge word gaps on narrow columns */
+  .justify-text,
+  .justify-text p,
+  .postcard__preview-txt {
+    text-align: left;
+  }
+
+  /* long Dutch words (COMMUNICATIELIJNEN, INFRASTRUCTUUR) must wrap instead of overflowing */
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  .offer__details h2 {
+    font-size: 20px;
+  }
+
+  /* iOS Safari does not support fixed backgrounds; they render zoomed-in or blank */
+  .footer__top,
+  [style*="fixed"] {
+    background-attachment: scroll !important;
+  }
+
+  .footer__top.ptb--130 {
+    padding: 60px 0;
+  }
+
+  iframe {
+    height: 320px;
+  }
+}
+
+/* Logo: trimmed file (no transparent padding) in the header, white version in the dark footer */
+.footer__logo {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .logo img {
+    width: 240px;
+    max-width: 100%;
+  }
+
+  .footer__logo {
+    width: 280px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* project cards: nested rule in this file sets justify with higher specificity */
+  .postcard .postcard__preview-txt {
+    text-align: left;
+  }
+
+  /* stacked text/photo columns: give photos room and full width */
+  .htc__mission__area img,
+  .htc__latest__project__area img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 30px 0;
+  }
+
+  /* contact details next to their icon, left-aligned */
+  .htc__address__container .ct__details,
+  .htc__address__container .ct__details p {
+    text-align: left;
+  }
+
+  /* homepage value cards: less empty space */
+  .about__inner {
+    padding: 36px 20px 64px;
+  }
+  .about__inner br {
+    display: none;
+  }
+  .about {
+    margin-bottom: 20px;
+  }
+
+  .slider__inner p {
+    width: 100%;
+  }
+}
+
+.home__projects__btn {
+  margin-top: 30px;
+}
+
+/* ----------------------------------------------------
+	Diensten: process steps + service blocks
+-------------------------------------------------------*/
+.steps {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.steps li {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  padding-bottom: 22px;
+}
+
+/* connecting line between the numbers */
+.steps li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 38px;
+  bottom: 0;
+  width: 2px;
+  background: #fcc236;
+  opacity: 0.5;
+}
+
+.steps__nr {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fcc236;
+  color: #1f2d30;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.steps__body h4 {
+  color: #1f2d30;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 6px 0 4px;
+}
+
+.steps__body p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.htc__offer__area .service__details {
+  text-align: center;
+}
+
+.htc__offer__area .service__details h2 {
+  display: inline-block;
+  background: #fcc236;
+  color: #1f2d30;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 8px 28px;
+  margin: 10px 0 0;
+  border-radius: 30px;
+}
+
+.offer__details h2 a {
+  color: #1f2d30;
+}
+
+.offer__details h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 10px;
+  background: #fcc236;
+  border-radius: 2px;
+}
+
+
+/* Projecten: "Jouw project hier?" call-to-action between the project cards */
+.project__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+  margin: 0 0 2rem;
+  padding: 32px 40px;
+  background: #fcc236;
+  border-radius: 10px;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.4);
+}
+
+.project__cta__text h3 {
+  color: #1f2d30;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.project__cta__text p {
+  color: #1f2d30;
+  margin: 0;
+}
+
+.project__cta__btn {
+  display: inline-block;
+  background: #1f2d30;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.project__cta__btn:hover,
+.project__cta__btn:focus {
+  background: #000;
+  color: #fcc236;
+}
+
+@media (max-width: 767px) {
+  .project__cta {
+    padding: 26px 22px;
+  }
+  .project__cta__text h3 {
+    font-size: 22px;
+  }
+}
+
+.veiligheid__btn {
+  margin-top: 30px;
+}
+
+/* Veiligheid: text and button share the same left edge */
+.htc__latest__project__area .section__title p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  /* buttons have a fixed 45px height in the theme; let long labels wrap instead of being cut off */
+  .htc__btn {
+    height: auto;
+    line-height: 1.4;
+    padding: 12px 22px;
+    text-align: center;
+  }
+}
+
+.diensten__cta {
+  margin: 50px 0 0;
+}
+
+/* ----------------------------------------------------
+	Contact page: same yellow/dark accents as the other pages
+-------------------------------------------------------*/
+.contact__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 36px 0 40px;
+}
+
+.contact__card {
+  flex: 1 1 260px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 30px 20px 26px;
+  background: #fafafa;
+  border-top: 4px solid #fcc236;
+  border-radius: 8px;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.31);
+  transition: transform 0.2s ease;
+}
+
+.contact__card:hover,
+.contact__card:focus {
+  transform: translateY(-3px);
+}
+
+.contact__card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: #fcc236;
+  color: #1f2d30;
+  font-size: 24px;
+}
+
+.contact__card__label {
+  color: #606060;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact__card__value {
+  color: #1f2d30;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact__cta {
+  margin-bottom: 50px;
+}
+
+.contact__visit h3 {
+  color: #1f2d30;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact__map {
+  display: block;
+  border: 0;
+  border-top: 4px solid #fcc236;
+  border-radius: 8px;
+  margin: 20px 0 50px;
+}
+
+/* Footer contact icons: yellow circles with dark icon, same as the contact page */
+.ht__address__icon i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fcc236;
+  border-color: #fcc236;
+  color: #1f2d30;
+  font-size: 22px;
+}
+
+.ht__address__inner:hover .ht__address__icon i {
+  background: #fff;
+  border-color: #fff;
+  color: #1f2d30;
+}
