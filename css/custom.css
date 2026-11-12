@@ -1908,3 +1908,18 @@ img, iframe, video {
     flex-direction: column;
   }
 }
+
+/* Mobile: show the intro text before its photo */
+@media (max-width: 991px) {
+  .home__split--text-first .row > .col-xs-12 {
+    display: flex;
+    flex-direction: column;
+  }
+  .home__split--text-first .row > .col-xs-12 > .col-md-6:first-child {
+    order: 2;
+  }
+  .home__split--text-first .home__photo-wrap {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+}
