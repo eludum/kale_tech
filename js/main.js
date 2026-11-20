@@ -246,3 +246,36 @@ $('.image-popup').magnificPopup({
 
 
 
+
+
+/*-----------------------------------
+  Hero video banner
+-------------------------------------- */
+(function () {
+  var video = document.querySelector('.hero__video');
+  if (!video) return;
+
+  // visitors who ask for less motion get the still poster
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+    return;
+  }
+
+  // continue where the previous page left off instead of restarting
+  var KEY = 'heroVideoTime';
+  function resume() {
+    try {
+      var t = parseFloat(sessionStorage.getItem(KEY));
+      if (t > 0 && t < video.duration) video.currentTime = t;
+    } catch (e) {}
+  }
+  if (video.readyState >= 1) resume();
+  else video.addEventListener('loadedmetadata', resume);
+  window.addEventListener('pagehide', function () {
+    try { sessionStorage.setItem(KEY, video.currentTime); } catch (e) {}
+  });
+
+  var p = video.play && video.play();
+  if (p && p.catch) p.catch(function () {});
+})();

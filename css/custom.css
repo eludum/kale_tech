@@ -1923,3 +1923,30 @@ img, iframe, video {
     margin-bottom: 0;
   }
 }
+
+/* ----------------------------------------------------
+	Hero video banner (all pages)
+-------------------------------------------------------*/
+.has-hero-video {
+  position: relative;
+  overflow: hidden;
+  /* shown until the video plays, and if it can't */
+  background: #1f2d30 url(../images/bg/crew-poster.jpg) center center / cover no-repeat;
+}
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.has-hero-video > .container {
+  position: relative;
+  z-index: 2;
+}
